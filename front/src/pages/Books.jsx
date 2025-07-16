@@ -6,7 +6,7 @@ import { useConfig } from '../config/ConfigProvider';
 
 const Books = () => {
     const [Data , setData] = useState() ; 
-    const server = useConfig();
+    const {server} = useConfig();
     useEffect(() => { /* yeh function apne app run hota h , on pg refresh . */
        const fetch = async()=>{
          await axios
