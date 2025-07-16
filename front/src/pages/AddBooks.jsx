@@ -5,7 +5,7 @@ import { useConfig } from '../config/ConfigProvider';
 
 
 const AddBooks = () => {
-  const server = useConfig();
+  const {server} = useConfig();
      const [Data , setData] = useState({bookname:"",
                                           author:"",
                                           desc:"",
