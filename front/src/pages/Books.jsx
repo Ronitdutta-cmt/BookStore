@@ -8,11 +8,12 @@ const Books = () => {
 
     useEffect(() => { /* yeh function apne app run hota h , on pg refresh . */
        const fetch = async()=>{
-          axios
+         await axios
           .get("http://localhost:1000/api/v1/getBooks")
-          .then((res)=>{setData(res.data.books)})  ;  /*// console.log(..) k jgh setData(..)*/
+          .then((res)=>{setData(res.data)})  ;  /*// console.log(..) k jgh setData(..)*/
        }
        fetch() ; /*// yeh fn call kiye , tb hi reload pr fn call hoga. */
+      
     } , []);
 
 
@@ -24,6 +25,7 @@ const Books = () => {
 
      {/* //if else with the help of ternary operator*/}
       {/*//data fetch ho gya - ok , nahi hua toh : loading . */}
+
       {Data ? (<BooksSection data={Data}/>) : 
       (<div className="text-white">Loading....</div>) }
 

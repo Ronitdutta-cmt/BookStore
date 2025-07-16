@@ -4,19 +4,19 @@ import axios from "axios" ;
 
 
 const AddBooks = () => {
-  const addBooks=()=>{
-    useState[Data , setData] = useState({bookname:"",
+
+     const [Data , setData] = useState({bookname:"",
                                           author:"",
                                           desc:"",
                                           price:"",
                                           image:""});
-  }
+  
   const change=(e)=>{
     const {name , value} = e.target;
     setData({...Data,[name]: value}) ;
   };
   const submit  = async()=>{
-    await axios.post{"http:localhost:1000/api/v1/add",Data.then((res)=>console.log(res)) ; }
+    await axios.post("http:localhost:1000/api/v1/add",Data.then((res)=>console.log(res)) );
   }
   console.log(Data); 
   return (
