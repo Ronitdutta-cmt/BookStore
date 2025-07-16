@@ -10,10 +10,12 @@ import {
 import Books from './pages/Books';
 import AddBooks from './pages/AddBooks';
 import Footer from './components/Footer'; 
+import { ConfigProvider } from './config/ConfigProvider';
  
 
 function App() {
   return (
+    <ConfigProvider>
     <Router>
       <Navbar /> 
         <Routes>
@@ -23,6 +25,7 @@ function App() {
         </Routes>
       <Footer />
     </Router>
+    </ConfigProvider>
   );
 }
 

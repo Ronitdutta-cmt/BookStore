@@ -12,6 +12,6 @@ app.use("/api/v1" , bookRoute ) ;  // don't know where /api/v1 came from .
  
 
 
-app.listen(1000, () => {
+app.listen(process.env.PORT, () => {
     console.log("server start ho gya") ; 
 }); 

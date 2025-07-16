@@ -1,10 +1,11 @@
 import React from 'react'
 import {useState} from 'react'
 import axios from "axios" ; 
+import { useConfig } from '../config/ConfigProvider';
 
 
 const AddBooks = () => {
-
+  const server = useConfig();
      const [Data , setData] = useState({bookname:"",
                                           author:"",
                                           desc:"",
@@ -16,7 +17,7 @@ const AddBooks = () => {
     setData({...Data,[name]: value}) ;
   };
   const submit  = async()=>{
-    await axios.post("http:localhost:1000/api/v1/add",Data.then((res)=>console.log(res)) );
+    await axios.post(`${server}/api/v1/add`,Data.then((res)=>console.log(res)) );
   }
   console.log(Data); 
   return (
